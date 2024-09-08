@@ -9,7 +9,6 @@
     "lint": "biome lint -- apply <files>",
     "format": "biome format <files> --write",
     "check": "biome check --write",
-    "prepare": "husky install",
     "test": "jest"
   },
   "dependencies": {
