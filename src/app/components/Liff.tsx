@@ -1,21 +1,10 @@
 'use client'
 
-import liff from '@line/liff'
-import { useEffect } from 'react'
+import liff from '@line/liff';
+import { useEffect } from 'react';
 
-export function Liff({ liffId, url }: { liffId: string, url: string }) {
+export function Liff({ liffId, url }: { liffId: string; url: string }) {
   useEffect(() => {
-    // liff.init({
-    // 	liffId: '2006269683-4G1x1pAr',
-    // 	withLoginOnExternalBrowser: true
-    // }).then(() => {
-    // 	console.log('SUCCESS')
-    // 	console.log(liff.isLoggedIn())
-    // 	console.log(liff.getIDToken())
-    // }).catch((err) => {
-    // 	console.log(err);
-    // })
-    // console.log("process.env.LIFF_ID", process.env.LIFF_ID);
     liff.init(
       {
         liffId: liffId,
