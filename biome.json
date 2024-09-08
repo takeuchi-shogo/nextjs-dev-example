@@ -3,13 +3,13 @@
   "extends": [],
   "files": {
     "ignoreUnknown": true,
-    "ignore": ["node_modules", ".next"]
+    "ignore": ["node_modules", ".next", "coverage"]
   },
   "organizeImports": {
     "enabled": true
   },
   "linter": {
-    "ignore": [".next", "node_modules"],
+    "ignore": [".next", "node_modules", "coverage"],
     "rules": {
       "recommended": true
     }
@@ -17,7 +17,7 @@
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
-    "ignore": [".next", "node_modules"],
+    "ignore": [".next", "node_modules", "coverage"],
     "indentWidth": 2,
     "indentStyle": "space",
     "lineWidth": 80
