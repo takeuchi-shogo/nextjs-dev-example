@@ -1,19 +1,22 @@
 #
-name: nextjs-ci test sample
+name: nextjs-ci test
 
 on:
   # メインブランチにpushがあったときにワークフローを実行
   push:
 
 jobs:
-  nextjs-ci-test-sample:
+  nextjs-ci-test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         # 使用するNode.jsのバージョンを定義
         node-version: [18.x]
     steps:
-      - name: npm 
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+      - name: Install dependencies
         shell: bash
         run: |
           npm install
