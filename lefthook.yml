@@ -9,7 +9,7 @@ pre-push:
   commands:
     check:
       glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
-      run: npx biome check --no-errors-on-unmatched --files-ignore-unknown=true <files>
+      run: npx biome check --no-errors-on-unmatched --files-ignore-unknown=true
 
 # EXAMPLE USAGE:
 #
