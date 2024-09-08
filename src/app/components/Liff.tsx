@@ -1,7 +1,7 @@
 'use client'
 
-import liff from '@line/liff';
-import { useEffect } from 'react';
+import liff from '@line/liff'
+import { useEffect } from 'react'
 
 export function Liff({ liffId, url }: { liffId: string; url: string }) {
   useEffect(() => {
