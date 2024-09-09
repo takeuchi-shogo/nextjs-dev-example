@@ -1,0 +1,10 @@
+__tests__
+.github
+.husky
+.next
+!.next/static
+!.next/standalone
+.vscode
+coverage
+node_modules
+README.md

@@ -5,10 +5,11 @@ import { useEffect } from 'react'
 
 export function Liff({ liffId, url }: { liffId: string; url: string }) {
   useEffect(() => {
+    console.log(liffId, url)
     liff.init(
       {
         liffId: liffId,
-        withLoginOnExternalBrowser: true,
+        // withLoginOnExternalBrowser: true,
       },
       () => {
         console.log('SUCCESS')
