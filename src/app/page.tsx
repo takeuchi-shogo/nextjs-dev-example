@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Liff } from './components/Liff'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -49,10 +49,7 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-        <Liff
-          liffId={process.env.LIFF_ID}
-          url={process.env.LIFF_REDIRECT_URL}
-        />
+        <Link href={'/exp'}>Liff Login</Link>
       </main>
       <footer className='row-start-3 flex gap-6 flex-wrap items-center justify-center'>
         <a

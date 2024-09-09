@@ -4,10 +4,17 @@ name: nextjs-ci
 on:
   # メインブランチにpushがあったときにワークフローを実行
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - 'feature/**'
+    branches-ignore:
+      - 'test/**'
   # メインブランチに対するプルリクエストが作成されたときにワークフローを実行
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+    branches-ignore:
+      - 'test/**'
 
 jobs:
   nextjs-ci:
