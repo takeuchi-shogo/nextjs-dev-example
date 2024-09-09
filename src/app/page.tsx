@@ -49,6 +49,7 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+        <Link href={'/about'}>About</Link>
         <Link href={'/exp'}>Liff Login</Link>
       </main>
       <footer className='row-start-3 flex gap-6 flex-wrap items-center justify-center'>
