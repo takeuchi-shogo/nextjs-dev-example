@@ -1,16 +1,27 @@
-# https://hub.docker.com/_/node
-FROM node:20-alpine AS base
+# 開発環境用のベースイメージ
+FROM node:20-alpine AS builder
 
-# Install dependencies only when needed
-FROM base AS deps
-# https://github.com/nodejs/docker-node/tree/main?tab=readme-ov-file#nodealpine
-# One common issue that may arise is a missing shared library required for use of process.dlopen.
-# To add the missing shared libraries to your image, adding the libc6-compat package in your Dockerfile is recommended: apk add --no-cache libc6-compat
-RUN apk add --no-cache libc6-compat
-
-USER node
-
-# Install dependencies
 WORKDIR /app
-COPY --chown=node:node ./package.json ./
-RUN npm install
+COPY package*.json ./
+RUN npm install --frozen-lockfile
+
+COPY . .
+RUN npm run build
+
+# 本番用のイメージを別に作成
+FROM node:20-alpine AS runner
+WORKDIR /app
+
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+COPY --from=builder /app/tailwind.config.ts ./tailwind.config.ts
+COPY --from=builder /app/postcss.config.mjs ./postcss.config.mjs
+
+# 環境変数とポート設定
+# ENV NODE_ENV production
+ENV PORT 3000
+EXPOSE 3000
+
+CMD ["npm", "start"]
