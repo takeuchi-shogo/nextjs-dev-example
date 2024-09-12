@@ -4,6 +4,8 @@ name: nextjs-ci test
 on:
   # メインブランチにpushがあったときにワークフローを実行
   push:
+    branches-ignore:
+      - master
 
 jobs:
   nextjs-ci-test:
