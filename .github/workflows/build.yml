@@ -6,15 +6,6 @@ on:
   push:
     branches:
       - master
-      - 'feature/**'
-    branches-ignore:
-      - 'test/**'
-  # メインブランチに対するプルリクエストが作成されたときにワークフローを実行
-  pull_request:
-    branches:
-      - master
-    branches-ignore:
-      - 'test/**'
 
 jobs:
   nextjs-ci:
