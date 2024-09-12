@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "https:dev": "next dev --experimental-https",
     "build": "next build",
     "start": "next start",
     "lint": "biome lint -- apply <files>",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
+    "@playwright/test": "^1.47.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",

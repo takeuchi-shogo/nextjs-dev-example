@@ -1,8 +1,0 @@
-{
-  "editor.defaultFormatter": "biomejs.biome",
-  "biome.configFile": "./biome.json",
-  "editor.codeActionsOnSave": {
-    "quickfix.biome": true,
-    "source.organizeImports": true // 修正: "biome"を削除
-  }
-}
