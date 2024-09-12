@@ -58,7 +58,12 @@ export function Liff({ liffId, url }: { liffId: string; url: string }) {
     )
   }, [liffId, url])
 
-  return <div>サンプル
-    <button type="button" onClick={ () => liff.logout() }>LOGOUT</button>
-  </div>
+  return (
+    <div>
+      サンプル
+      <button type='button' onClick={() => liff.logout()}>
+        LOGOUT
+      </button>
+    </div>
+  )
 }
