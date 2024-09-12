@@ -29,34 +29,36 @@ export function Liff({ liffId, url }: { liffId: string; url: string }) {
             redirectUri: url,
           })
         } else {
-          console.log('ALREADY LOGGED IN')
-          // liff.logout()
-          liff.getFriendship().then(result => {
-            console.log('FIENDSHIP')
-            console.log(result.friendFlag)
-          })
-          liff.sendMessages([
-            {
-              type: 'text',
-              text: 'Hello, World!',
-            },
-          ])
-          liff.getProfile().then(profile => {
-            console.log('PROFILE')
-            console.log(profile.userId)
-            console.log(profile.displayName)
-            console.log(profile.pictureUrl)
-            liff.sendMessages([
-              {
-                type: 'text',
-                text: `P: ${profile.userId} ${profile.displayName} ${profile.pictureUrl}`,
-              },
-            ])
-          })
+          // console.log('ALREADY LOGGED IN')
+          // // liff.logout()
+          // liff.getFriendship().then(result => {
+          //   console.log('FIENDSHIP')
+          //   console.log(result.friendFlag)
+          // })
+          // liff.sendMessages([
+          //   {
+          //     type: 'text',
+          //     text: 'Hello, World!',
+          //   },
+          // ])
+          // liff.getProfile().then(profile => {
+          //   console.log('PROFILE')
+          //   console.log(profile.userId)
+          //   console.log(profile.displayName)
+          //   console.log(profile.pictureUrl)
+          //   liff.sendMessages([
+          //     {
+          //       type: 'text',
+          //       text: `P: ${profile.userId} ${profile.displayName} ${profile.pictureUrl}`,
+          //     },
+          //   ])
+          // })
         }
       },
     )
   }, [liffId, url])
 
-  return <div>サンプル</div>
+  return <div>サンプル
+    <button type="button" onClick={ () => liff.logout() }>LOGOUT</button>
+  </div>
 }
