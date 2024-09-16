@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@line/liff": "^2.24.0",
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^29.5.13",
     "next": "14.2.8",
     "react": "^18",
     "react-dom": "^18",
